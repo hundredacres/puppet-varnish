@@ -18,32 +18,32 @@ class varnish::params {
 
   # Maximum number of open files (for ulimit -n)
   $nfiles = $::operatingsystem ? {
-    default => "131072",
+    default => '131072',
   }
 
   # Maximum locked memory size (for ulimit -l)
   $memlock = $::operatingsystem ? {
-    default => "82000",
+    default => '82000',
   }
 
   # Backend host
   $backendhost = $::operatingsystem ? {
-    default => "127.0.0.1",
+    default => '127.0.0.1',
   }
 
   # Backend port
   $backendport = $::operatingsystem ? {
-    default => "8080",
+    default => '8080',
   }
 
   # Defaults taken from /etc/default/varnish on Debian Squeeze
-  $admin_listen_address = "localhost"
+  $admin_listen_address = 'localhost'
   $admin_listen_port    = 6081
   $ttl                  = 120
   $min_threads          = 1
   $max_threads          = 1000
   $thread_timeout       = 120
- 
+
   ### Application related parameters
 
   $package = $::operatingsystem ? {
